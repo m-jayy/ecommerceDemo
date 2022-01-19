@@ -1,10 +1,12 @@
-package com.example.ecommercedemo;
+package com.example.ecommercedemo.UI.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.ecommercedemo.R;
+
+public class MainActivity extends Base {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
