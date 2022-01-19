@@ -8,5 +8,4 @@ public interface IBase {
     void apiCallBack(Object obj, String type);
     void initializeControls(View view);
     void apiCallBackFailed(Object obj, String type);
-
 }

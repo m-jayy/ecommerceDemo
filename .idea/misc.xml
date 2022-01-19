@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/round_white_background.xml" value="0.18425925925925926" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/activity_base.xml" value="0.2421875" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/activity_main.xml" value="0.12601626016260162" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/default_dialog.xml" value="0.2265625" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/dialog_loading.xml" value="0.20394736842105263" />
       </map>
     </option>
   </component>
