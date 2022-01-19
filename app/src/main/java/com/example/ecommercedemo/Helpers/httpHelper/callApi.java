@@ -1,4 +1,4 @@
-package com.example.ecommercedemo.UI.Helpers.httpHelper;
+package com.example.ecommercedemo.Helpers.httpHelper;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
@@ -6,10 +6,10 @@ import android.widget.Toast;
 
 import com.example.ecommercedemo.UI.Dialogs.DefaultDialog;
 import com.example.ecommercedemo.UI.Dialogs.Loading_Dialog;
-import com.example.ecommercedemo.UI.Helpers.Enitits.Constants;
-import com.example.ecommercedemo.UI.Helpers.Enitits.Utils;
-import com.example.ecommercedemo.UI.Interface.IBase;
-import com.example.ecommercedemo.UI.Interface.apiDefinition;
+import com.example.ecommercedemo.Helpers.Enitits.Constants;
+import com.example.ecommercedemo.Helpers.Enitits.Utils;
+import com.example.ecommercedemo.Interface.IBase;
+import com.example.ecommercedemo.Interface.apiDefinition;
 import com.google.gson.Gson;
 
 import okhttp3.RequestBody;
@@ -145,6 +145,74 @@ public class callApi {
 
             }
         });
+
+    }
+
+    public void apiCallURl(String Url, String type, Object cv, final boolean loader) {
+        if (loader) {
+            showLoadingDialog("");
+        }
+        apiDefinition service;
+        RequestBody body = null;
+
+        service = RestCall.getMainClient().create(apiDefinition.class);
+
+        Call<ResponseBody> call = null;
+//        if (type.equals(Constants.apiCallConditionAutofill)) {
+//            String term = (String) cv;
+//            call = service.conditionNameAutoFill(term, "consumer_name,term_icd9_code", 20);
+//
+//        }
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (loader) {
+                    hideLoadingDialog();
+                }
+
+                try {
+                    int responceCode = response.code();
+                    String responceMessagae = response.message();
+                    String responceBody = "";
+
+                    if (response.isSuccessful()) {
+                        responceBody = response.body().string();
+                    } else {
+                        responceBody = response.errorBody().string();
+                    }
+
+                    if (responceCode == 200) {
+                        Object obj = responceBody;
+                        if (ibase != null) {
+                            ibase.apiCallBack(obj, type);
+
+                        }
+                    } else {
+                        Object obj = responceBody;
+                        if (ibase != null) {
+                            ibase.apiCallBackFailed(obj, type);
+                        }
+
+                    }
+
+                } catch (Exception e) {
+                    Log.i("apiCallURl Exc", e.getMessage() + " ..");
+                    ibase.apiCallBackFailed(null, type);
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                if (loader) {
+                    hideLoadingDialog();
+                }
+                ibase.apiCallBackFailed(null, type);
+            }
+        });
+
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.ecommercedemo.UI.Helpers.Enitits;
+package com.example.ecommercedemo.Helpers.Enitits;
 
 public class Constants {
 

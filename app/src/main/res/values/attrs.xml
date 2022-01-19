@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="TextView">
+        <attr name="is_spannable" format="boolean" />
+        <attr name="text_color" format="integer" />
+    </declare-styleable>
+
+</resources>

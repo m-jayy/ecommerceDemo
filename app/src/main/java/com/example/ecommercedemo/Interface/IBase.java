@@ -1,4 +1,4 @@
-package com.example.ecommercedemo.UI.Interface;
+package com.example.ecommercedemo.Interface;
 
 
 import android.view.View;

@@ -1,6 +1,6 @@
-package com.example.ecommercedemo.UI.Helpers.httpHelper;
+package com.example.ecommercedemo.Helpers.httpHelper;
 
-import com.example.ecommercedemo.UI.Helpers.Enitits.Constants;
+import com.example.ecommercedemo.Helpers.Enitits.Constants;
 
 import java.util.concurrent.TimeUnit;
 

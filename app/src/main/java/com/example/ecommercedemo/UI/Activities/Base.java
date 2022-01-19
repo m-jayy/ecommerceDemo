@@ -10,8 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecommercedemo.R;
-import com.example.ecommercedemo.UI.Helpers.httpHelper.callApi;
-import com.example.ecommercedemo.UI.Interface.IBase;
+import com.example.ecommercedemo.Helpers.httpHelper.callApi;
+import com.example.ecommercedemo.Interface.IBase;
 
 public class Base extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,6 +26,7 @@ public class Base extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+        btnBack = (ImageView) findViewById(R.id.btnBack);
     }
 
     public void closeKeyBoard() {
