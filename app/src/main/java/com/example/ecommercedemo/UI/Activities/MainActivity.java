@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.example.ecommercedemo.Helpers.Enitits.Constants;
 import com.example.ecommercedemo.Helpers.FragmentHandler;
 import com.example.ecommercedemo.Interface.OnFragmentInteractionListener;
 import com.example.ecommercedemo.R;
@@ -34,8 +35,9 @@ public class MainActivity extends Base implements IBase, OnFragmentInteractionLi
 
     @Override
     public void initializeControls() {
-        fragmentHandler = new FragmentHandler(R.id.rlFragmentHandler, this);
-        fragmentHandler.replaceFragment(new Home(fragmentHandler), false);
+        restCallUrl(Constants.getMainUrl(),Constants.products, null, false);
+//        fragmentHandler = new FragmentHandler(R.id.rlFragmentHandler, this);
+//        fragmentHandler.replaceFragment(new Home(fragmentHandler), false);
     }
 
     @Override

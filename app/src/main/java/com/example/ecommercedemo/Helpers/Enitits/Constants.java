@@ -25,14 +25,16 @@ public class Constants {
     public static String getMainUrl() {
         if (env == Environment.Dev) {
 
-            return "http://10.0.2.2:8000/";   // IPATH
-
+            return "https://fakestoreapi.com/";
+//            return "http://10.0.2.2:8000/";
         }
         return "";
     }
 
     public static int RetroFItTimeout = 360;
     public static String apiError = "apiError";
+    public static String products = "products";
+
 
 
 }

@@ -1,4 +1,5 @@
 package com.example.ecommercedemo.Helpers.httpHelper;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
@@ -152,17 +153,14 @@ public class callApi {
         if (loader) {
             showLoadingDialog("");
         }
-        apiDefinition service;
-        RequestBody body = null;
 
-        service = RestCall.getMainClient().create(apiDefinition.class);
+        apiDefinition service;
+        service = RestCall.getMainClient(Url).create(apiDefinition.class);
 
         Call<ResponseBody> call = null;
-//        if (type.equals(Constants.apiCallConditionAutofill)) {
-//            String term = (String) cv;
-//            call = service.conditionNameAutoFill(term, "consumer_name,term_icd9_code", 20);
-//
-//        }
+        if (type.equals(Constants.products)) {
+            call = service.products();
+        }
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -188,7 +186,8 @@ public class callApi {
                             ibase.apiCallBack(obj, type);
 
                         }
-                    } else {
+                    }else {
+                        showToast(responceMessagae);
                         Object obj = responceBody;
                         if (ibase != null) {
                             ibase.apiCallBackFailed(obj, type);

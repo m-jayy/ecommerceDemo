@@ -34,4 +34,15 @@ public class RestCall {
         }
         return retrofitMain;
     }
+
+
+    public static Retrofit getMainClient(String URL) {
+
+        if (retrofitMain == null) {
+            retrofitMain = new Retrofit.Builder().baseUrl(URL).build();
+        }
+        return retrofitMain;
+    }
+
+
 }

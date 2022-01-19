@@ -59,4 +59,11 @@ public class Base extends AppCompatActivity implements View.OnClickListener {
         callApi callObj = new callApi(ibase, getApplicationContext());
         callObj.apiCal(type, cv, loader);
     }
+
+    protected void restCallUrl(String Url, final String type, Object cv, boolean loader) {
+        closeKeyBoard();
+        callApi callObj = new callApi(ibase, getApplicationContext());
+        callObj.apiCallURl(Url, type, cv, loader);
+
+    }
 }
