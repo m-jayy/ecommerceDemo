@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable-v24/button_magenta.xml" value="0.25435897435897437" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable-v24/gradient_accent_90.xml" value="0.15989583333333332" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable-v24/round_white_background.xml" value="0.18981481481481483" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/button_magenta.xml" value="0.25435897435897437" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/gradient_accent_120.xml" value="0.15989583333333332" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/gradient_accent_90.xml" value="0.15989583333333332" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/round_white_background.xml" value="0.18425925925925926" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/drawable/shape_left_corner_radius_round_magenta_45_r.xml" value="0.23897435897435898" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/activity_base.xml" value="0.2421875" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/activity_main.xml" value="0.12601626016260162" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/cart_row.xml" value="0.2421875" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/default_dialog.xml" value="0.2265625" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/dialog_loading.xml" value="0.20394736842105263" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/fragment_cart.xml" value="0.2" />
         <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/fragment_home.xml" value="0.11677479147358666" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/fragment_product_detail.xml" value="0.20572916666666666" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/product_row_header.xml" value="0.264" />
+        <entry key="..\:/Android Studio/ecommerceDemo/app/src/main/res/layout/shimmer_product_row_header.xml" value="0.2265625" />
       </map>
     </option>
   </component>

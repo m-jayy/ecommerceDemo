@@ -39,7 +39,20 @@ public class RestCall {
     public static Retrofit getMainClient(String URL) {
 
         if (retrofitMain == null) {
-            retrofitMain = new Retrofit.Builder().baseUrl(URL).build();
+
+            final OkHttpClient okHttpClient = new OkHttpClient.Builder()
+
+                    .readTimeout(Constants.RetroFItTimeout, TimeUnit.SECONDS)
+                    .connectTimeout(Constants.RetroFItTimeout, TimeUnit.SECONDS)
+                    .callTimeout(Constants.RetroFItTimeout, TimeUnit.SECONDS)
+                    .build();
+
+            retrofitMain = new Retrofit.Builder()
+                    .baseUrl(Constants.getMainUrl())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(okHttpClient)
+                    .build();
+
         }
         return retrofitMain;
     }

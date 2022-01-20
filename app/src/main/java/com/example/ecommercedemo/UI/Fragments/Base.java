@@ -92,6 +92,13 @@ public class Base extends Fragment implements View.OnClickListener {
 
     }
 
+    protected void restCallUrl(String Url, final String type, Object cv, boolean loader) {
+        closeKeyBoard();
+        callApi callObj = new callApi(ibase, _context);
+        callObj.apiCallURl(Url, type, cv, loader);
+
+    }
+
     public void closeKeyBoard() {
 
 
@@ -105,16 +112,7 @@ public class Base extends Fragment implements View.OnClickListener {
 
     }
 
-    public Boolean isNetworkConnected()
-    {
-        ConnectivityManager cm =
-                (ConnectivityManager)_context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null &&
-                activeNetwork.isConnectedOrConnecting();
-        return isConnected;
-    }
 
     @Override
     public void onResume() {

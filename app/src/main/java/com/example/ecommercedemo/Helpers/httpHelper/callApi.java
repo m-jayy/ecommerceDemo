@@ -5,13 +5,20 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.ecommercedemo.Models.apiCallProductResponse;
 import com.example.ecommercedemo.UI.Dialogs.DefaultDialog;
 import com.example.ecommercedemo.UI.Dialogs.Loading_Dialog;
 import com.example.ecommercedemo.Helpers.Enitits.Constants;
 import com.example.ecommercedemo.Helpers.Enitits.Utils;
 import com.example.ecommercedemo.Interface.IBase;
 import com.example.ecommercedemo.Interface.apiDefinition;
+import com.example.ecommercedemo.Models.apiCallProductsDetailResponse;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -181,10 +188,13 @@ public class callApi {
                     }
 
                     if (responceCode == 200) {
-                        Object obj = responceBody;
+
+
+                        Type collectionType = new TypeToken<Collection<apiCallProductsDetailResponse>>(){}.getType();
+                        Object obj = new Gson().fromJson(responceBody, collectionType);
+
                         if (ibase != null) {
                             ibase.apiCallBack(obj, type);
-
                         }
                     }else {
                         showToast(responceMessagae);

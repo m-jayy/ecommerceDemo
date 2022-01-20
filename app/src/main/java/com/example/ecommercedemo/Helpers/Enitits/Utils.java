@@ -2,19 +2,27 @@ package com.example.ecommercedemo.Helpers.Enitits;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.example.ecommercedemo.Models.apiCallProductResponse;
+import com.example.ecommercedemo.Models.apiCallProductsDetailResponse;
 
 public class Utils {
 
     static Pattern HTML_PATTERN = Pattern.compile("<(\"[^\"]*\"|'[^']*'|[^'\">])*>");
 
     public static Class getResponseClass(String type) {
+        if (type.equals(Constants.products)) {
+            return apiCallProductsDetailResponse[].class;
+        }
 
-        // to be added
         return null;
     }
+
+
 
 
     public static String firstLetterCapital(String myString) {

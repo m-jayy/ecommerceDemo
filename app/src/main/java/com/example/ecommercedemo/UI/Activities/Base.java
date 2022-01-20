@@ -17,7 +17,7 @@ public class Base extends AppCompatActivity implements View.OnClickListener {
 
     IBase ibase;
     ProgressDialog loadingDialog;
-    ImageView btnBack;
+
 
     protected void callApi() {
     }
@@ -26,7 +26,7 @@ public class Base extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        btnBack = (ImageView) findViewById(R.id.btnBack);
+
     }
 
     public void closeKeyBoard() {
@@ -36,6 +36,8 @@ public class Base extends AppCompatActivity implements View.OnClickListener {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+
 
     protected void showToast(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
